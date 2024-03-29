@@ -64,5 +64,11 @@ describe TowerGame do
                 expect(game_2.grid).to eq([[2, 3, 4], [], [1]])
             end
         end
+
+        context 'raise error if stacking bigger disk above smaller disk' do
+            it 'should return error' do
+                expect {game.move(0, 2)}.to raise_error "Invalid move"
+            end
+        end
     end
 end
